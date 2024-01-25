@@ -36,3 +36,14 @@ forBlock['add_text'] = function (
   const code = `${addText}(${text}, ${color});\n`;
   return code;
 };
+
+forBlock['systemOut'] = function (
+  block: Blockly.Block,
+  generator: Blockly.CodeGenerator
+) {
+  const text = generator.valueToCode(block, 'TEXT', Order.NONE) || `""`;    
+
+  // Generate the function call for this block.
+  const code = `System.out.println(${text});\n`;
+  return code;
+};

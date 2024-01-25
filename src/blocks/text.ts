@@ -32,8 +32,25 @@ const addText = {
   'helpUrl': '',
 };
 
+const systemOut = {
+  'type': 'systemOut',
+  'message0': 'System.out.println(%1)',
+  'args0': [
+    {
+      'type': 'input_value',
+      'name': 'TEXT',
+      'check': 'String',
+    }
+  ],
+  'previousStatement': null,
+  'nextStatement': null,
+  'colour': 160,
+  'tooltip': '',
+  'helpUrl': '',
+};
+
 // Create the block definitions for the JSON-only blocks.
 // This does not register their definitions with Blockly.
 // This file has no side effects!
 export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray(
-    [addText]);
+  [addText, systemOut]);
